@@ -8,4 +8,6 @@ To run the server
     git clone git@github.com:iakshay/fluid-collaboration.git
     cd fluid-collaboration
     npm install
-    node app
+    grunt
+
+*Note* - This will run the server in livereload mode, any changes to application files will reload the server and the browser.
