@@ -1,5 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  - for (var i=0; i<3; i++)
+    div(class='column column-#{i}')
+      - for (var j=0; j<2; j++)
+        section(class='module module-#{j}')
+          .title-bar
+            h3 Component Name #{j}
+            a(class='toggle-collapse', href='') -
+          .module-inner
+            p.
+              Content here
+  - for (var i=3; i<5; i++)
+    div(class='column column-#{i}')
