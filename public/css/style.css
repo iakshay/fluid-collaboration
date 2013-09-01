@@ -3,9 +3,13 @@
 	padding:0;
 }
 
+html, body{
+	height:100%;
+}
 body{
 	font: 16px 'Helvetica', Arial;
 	color:#fff;
+	overflow:hidden;
 }
 
 a{
@@ -22,28 +26,25 @@ header h1{
 	font-weight:300;
 }
 .container{
-	position:absolute;
-	top:60px;
-	background:#eee;
-	right:0;
+	height: 100%;
+	position:relative;
 	bottom:0;
 	left:0;
+	right:0;
+	top:0;
+	background:#eee;
 }
 
-.column{
-	width:20%;
-	float:left;
-}
 .module{
-	width:100%;
-	max-width:300px;
 	outline:0 !important;
+	background: #fff;
+	margin:5px;
+	border:1px solid #CCC;
+	float:left;
 }
 
 .module .title-bar{
-	margin:5px 5px 0 5px;
 	background:rgb(0, 118, 176);
-	cursor: move;
 	padding:5px 10px;
 	height:25px;
 }
@@ -64,14 +65,9 @@ header h1{
 	float:right;
 }
 
-.module-inner{
-	margin:0 5px 5px 5px;
-	border:1px solid #CCC;
-	background:#fff;
-	min-height:240px;
-}
 
-.dropMarker {
+
+/*.dropMarker {
     background-color: #00a651;
     height: 3px;
     padding: 0 0 0 0;
@@ -81,4 +77,23 @@ header h1{
 
 .avatar{
 	opacity:0.5;
+}*/
+
+.module-container{
+	position: absolute;
+	top:60px;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.module-chat{
+	width:25%;
+	height:100%;
+}
+.module-video{
+	width:50%;
+}
+
+.module-notes{
+	width:25%;
 }
