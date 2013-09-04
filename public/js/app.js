@@ -1,8 +1,5 @@
 (function ($, fluid) {
     FC.init = function(){   
-      var containerHeight = $('.module-container').innerHeight();
-      $('.full-height').innerHeight(containerHeight);
-      $('.half-height').innerHeight(containerHeight*0.5);
       /*fluid.reorderLayout(".container", {
         selectors: {
           columns: ".column",

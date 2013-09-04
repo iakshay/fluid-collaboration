@@ -17,8 +17,8 @@ a{
 }
 header{
 	background:#222;
-	height:60px;
-	line-height:60px;
+	height:10%;
+	line-height:1.5;
 	padding-left:20px;
 }
 
@@ -38,14 +38,19 @@ header h1{
 .module{
 	outline:0 !important;
 	background: #fff;
-	margin:5px;
+	position: relative;
+	color:#222;
+	/*margin:5px;*/
 	border:1px solid #CCC;
+	box-sizing:border-box;
+	height:90%;
 	float:left;
 }
 
 .module .title-bar{
 	background:rgb(0, 118, 176);
 	padding:5px 10px;
+	color:#fff;
 	height:25px;
 }
 .module-selected .title-bar{
@@ -57,15 +62,6 @@ header h1{
 	font-weight:300;
 	line-height:25px;
 }
-
-.title-bar .toggle-collapse{
-	color:#fff;
-	font-size:40px;
-	line-height:18px;
-	float:right;
-}
-
-
 
 /*.dropMarker {
     background-color: #00a651;
@@ -79,16 +75,8 @@ header h1{
 	opacity:0.5;
 }*/
 
-.module-container{
-	position: absolute;
-	top:60px;
-	bottom:0;
-	left:0;
-	right:0;
-}
 .module-chat{
 	width:25%;
-	height:100%;
 }
 .module-video{
 	width:50%;
@@ -96,4 +84,35 @@ header h1{
 
 .module-notes{
 	width:25%;
+}
+
+.video-focus{
+	position: absolute;
+	background:rgba(223, 30, 30, 0.29);
+	left:0;
+	right:0;
+	top:35px;
+	bottom:50%;
+}
+
+.video-tiles{
+	position: absolute;
+	background:rgba(0, 128, 0, 0.26);
+	left:0;
+	right:0;
+	top:50%;
+	bottom:0;
+}
+
+.list-view{
+	position: absolute;
+	top:0;
+	bottom:90px;
+	overflow-y:scroll;
+	width:100%;
+}
+.list-view li{
+	background:#eee;
+	padding:8px 5px;
+	border-bottom: 1px solid #CCC;
 }
