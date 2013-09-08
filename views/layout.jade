@@ -7,10 +7,21 @@ html
     .container
       header
         h1 Infusion Collaborate
+        section.settings
+          select(name='layout')
+            option Layout 1
+            option Layout 2
+            option Layout 3
+          span Room Foo
+          a(class='settings', href='#settings') Settings
       block content
     script(src='/js/vendor/Infusion.min.js')
+    script(src='/js/vendor/jquery.ui.resizable.js')
+    script('src=js/vendor/screenfull.js')
+    script('src=js/vendor/simplewebrtc.js')
+    script(src='https://rawgithub.com/iakshay/fluid-WebRTC/renderer/js/webRTC.js')
     script.
       var FC = FC || {};
     script(src='/js/app.js')
     script.
-      FC.init();
+        FC.init();
