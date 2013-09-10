@@ -1,7 +1,7 @@
 (function ($, fluid) {
     FC.init = function(){
       var that = this;
-      /*$(".resizable").resizable({
+      $(".resizable").resizable({
         autoHide: true,
         handles: 'e',
         resize: function(e, ui) 
@@ -20,7 +20,7 @@
                 width: ui.element.width()/parent.width()*100+"%",
             });
         }
-      });*/
+      });
       
       $('select').change(function(){
         var optionSelected = $("option:selected", this).val();

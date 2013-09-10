@@ -5,7 +5,7 @@ html
     link(rel='stylesheet', href='/css/style.css')
   body
     .container
-      header
+      header.selectable
         h1 Infusion Collaborate
         section.top-panel
           select(name='layout')
@@ -20,7 +20,7 @@ html
     script(src='/js/vendor/jquery.ui.resizable.js')
     script('src=js/vendor/screenfull.js')
     script('src=js/vendor/simplewebrtc.js')
-    script('src=https://rawgithub.com/iakshay/fluid-WebRTC/renderer/js/webRTC.js')
+    script('src=js/fluid-webrtc/webRTC.js')
     script.
       var FC = FC || {};
     script(src='/js/app.js')

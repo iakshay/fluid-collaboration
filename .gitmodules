@@ -1,0 +1,3 @@
+[submodule "public/js/fluid-webrtc"]
+	path = public/js/fluid-webrtc
+	url = git@github.com:iakshay/fluid-WebRTC.git
