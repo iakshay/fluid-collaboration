@@ -1,6 +1,7 @@
 (function ($, fluid) {
     FC.init = function(){
-      $(".resizable").resizable({
+      var that = this;
+      /*$(".resizable").resizable({
         autoHide: true,
         handles: 'e',
         resize: function(e, ui) 
@@ -19,6 +20,16 @@
                 width: ui.element.width()/parent.width()*100+"%",
             });
         }
+      });*/
+      
+      $('select').change(function(){
+        var optionSelected = $("option:selected", this).val();
+        that.changeLayout(optionSelected);
+      });
+
+      $('.settings').click(function(){
+        $('.settings-panel').slideToggle();
+        return false;
       });
       console.log(fluid);
     };
@@ -32,18 +43,14 @@
       $el.css('width', width);
     };
     
-    FC.changeLayout = function(key){
+    FC.changeLayout = function(widths){
       var $mchat = $('.module-chat'),
           $mnotes = $('.module-notes'),
           $mvideo = $('.module-video');
 
-      var layouts = {
-        'ChatVideo': [0.33, 0.67, 0],
-        'Video': [0, 1, 0],
-        'VideoNotes':[0, 0.67, 0.33]
-      };
-      var mwidths = layouts[key];
-      console.log(mwidths);
+      
+      var mwidths = widths.split(',');
+      // console.log(mwidths);
       FC.setWidth($mchat, mwidths[0]*100 + '%');
       FC.setWidth($mvideo, mwidths[1]*100 + '%');
       FC.setWidth($mnotes, mwidths[2]*100 + '%');
