@@ -1,3 +1,4 @@
+var fluid_1_4 = fluid_1_4 || {};
 (function ($, fluid) {
     FC.init = function(){
       var that = this;
@@ -79,4 +80,4 @@
       return (window.location.protocol + '/' + window.location.host +'/');
     }
 
-})(jQuery, fluid);
+})(jQuery, fluid_1_4);
