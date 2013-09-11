@@ -1,5 +1,5 @@
 /*globals $, jQuery, WebRTC, console */
-var fluid_1_4 = fluid_1_4 || {};
+var fluid_1_5 = fluid_1_5 || {};
 (function ($, fluid) {
     'use strict';
     //fluid.setLogging(true);
@@ -165,4 +165,4 @@ var fluid_1_4 = fluid_1_4 || {};
         bindDOMEvents(that);
         
     };
-}(jQuery, fluid_1_4));
+}(jQuery, fluid_1_5));

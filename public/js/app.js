@@ -1,4 +1,4 @@
-var fluid_1_4 = fluid_1_4 || {};
+var fluid_1_5 = fluid_1_5 || {};
 (function ($, fluid) {
     FC.init = function(){
       var that = this;
@@ -35,7 +35,7 @@ var fluid_1_4 = fluid_1_4 || {};
       console.log(fluid);
 
       fluid.webrtc('.module-video', {
-        signalingServer: 'http://localhost:8888',
+        signalingServer: FC.signalingServer(),
         room: 'foo',
         listeners: {
             onConnect: function(room) {
@@ -49,6 +49,12 @@ var fluid_1_4 = fluid_1_4 || {};
             },
             onVideoClick: function(el){
                 console.log('Video - ', el);
+            }
+        },
+        resources: {
+            template: {
+                forceCache: true,
+                url: "html/video-controls.html"
             }
         }
       });
@@ -76,8 +82,8 @@ var fluid_1_4 = fluid_1_4 || {};
       FC.setWidth($mnotes, mwidths[2]*100 + '%');
     };
 
-    FC.signalServer = function(){
+    FC.signalingServer = function(){
       return (window.location.protocol + '/' + window.location.host +'/');
     }
 
-})(jQuery, fluid_1_4);
+})(jQuery, fluid_1_5);

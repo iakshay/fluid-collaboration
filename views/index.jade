@@ -16,7 +16,11 @@ block content
       h3 Video Conferencing
     .module-inner
         section(class='video-focus')
-        section(class='video-tiles') 
+          .flc-webrtc-room
+            form
+              input(type='text', class='flc-webrtc-room-name', placeholder='Enter Room Name')
+              input(type='submit', class='flc-webrtc-room-submit', placeholder='Join')
+        section(class='video-tiles flc-webrtc-tiles-container') 
           .title-bar
             h3 Collaborators
   section(class='module module-notes resizable selectable')  
