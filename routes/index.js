@@ -1,8 +1,9 @@
+var config = require('../config/config');
 
 /*
- * GET home page.
+ * GET Main Application page
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+	res.render('index', { title: 'Express', env: config.env});
 };

@@ -32,6 +32,25 @@
         return false;
       });
       console.log(fluid);
+
+      fluid.webrtc('.module-video', {
+        signalingServer: 'http://localhost:8888',
+        room: 'foo',
+        listeners: {
+            onConnect: function(room) {
+                console.log('Connected to ', room);
+            },
+            onVideoAdded: function(id) {
+                console.log('Video Added ID - ', id);
+            },
+            onVideoRemoved: function(id) {
+                console.log('Video Removed ID - ', id);
+            },
+            onVideoClick: function(el){
+                console.log('Video - ', el);
+            }
+        }
+      });
     };
 
     FC.setWidth = function($el, width){
@@ -55,5 +74,9 @@
       FC.setWidth($mvideo, mwidths[1]*100 + '%');
       FC.setWidth($mnotes, mwidths[2]*100 + '%');
     };
+
+    FC.signalServer = function(){
+      return (window.location.protocol + '/' + window.location.host +'/');
+    }
 
 })(jQuery, fluid);

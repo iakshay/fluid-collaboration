@@ -21,7 +21,7 @@ a{
 header{
 	background:#222;
 	height:50px;
-	line-height:50px;
+	line-height:50px	;
 	padding-left:20px;
 }
 
@@ -71,17 +71,6 @@ header h1{
 	line-height:25px;
 }
 
-/*.dropMarker {
-    background-color: #00a651;
-    height: 3px;
-    padding: 0 0 0 0;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.avatar{
-	opacity:0.5;
-}*/
 
 .module-chat{
 	width:25%;
@@ -186,5 +175,5 @@ header h1{
 
 .settings-panel{
 	display:none;
-	min-height:200px;
+	height:200px;
 }

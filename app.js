@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
+  , config = require('./config/config')
   , http = require('http')
   , path = require('path');
 
@@ -13,7 +13,7 @@ var app = express();
 
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', config.port);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -29,11 +29,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/users', user.list);
+//app.get('/users', user.list);
 
-var io = require('socket.io').listen(app.listen(app.get('port')));
 
-// console.log(io);
+var io = require('socket.io').listen(app.listen(config.port));
+
 io.sockets.on('connection', function (client) {
     // pass a message
     client.on('message', function (details) {

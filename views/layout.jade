@@ -18,11 +18,12 @@ html
       block content
     script(src='/js/vendor/Infusion.min.js')
     script(src='/js/vendor/jquery.ui.resizable.js')
-    script('src=js/vendor/screenfull.js')
-    script('src=js/vendor/simplewebrtc.js')
-    script('src=js/fluid-webrtc/webRTC.js')
+    script(src='js/vendor/screenfull.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='js/vendor/simplewebrtc.js')
+    script(src='js/fluid-webrtc/js/webRTC.js')
     script.
+      /* Fluid Collaboration */
       var FC = FC || {};
     script(src='/js/app.js')
-    script.
-        FC.init();
+    block script
