@@ -54,7 +54,7 @@ var fluid_1_5 = fluid_1_5 || {};
         resources: {
             template: {
                 forceCache: true,
-                url: "html/video-controls.html"
+                url: "/js/fluid-webrtc/html/video-controls.html"
             }
         }
       });

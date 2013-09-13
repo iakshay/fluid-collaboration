@@ -28,6 +28,7 @@ header{
 header h1{
 	display: inline-block;
 	font-weight:300;
+	float:left;
 }
 .container{
 	height: 100%;

@@ -3,6 +3,8 @@ html
   head
     title= title
     link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/WebRTC.css')
+
   body
     .container
       header.selectable
@@ -16,7 +18,7 @@ html
           span Room Foo
           a(class='settings', href='#settings') Settings
       block content
-    script(src='/js/vendor/Infusion-1.5.min.js')
+    script(src='/js/vendor/InfusionAll.js')
     script(src='/js/vendor/jquery.ui.resizable.js')
     script(src='js/vendor/screenfull.js')
     script(src='/socket.io/socket.io.js')
