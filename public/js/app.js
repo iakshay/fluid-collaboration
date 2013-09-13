@@ -83,7 +83,7 @@ var fluid_1_5 = fluid_1_5 || {};
     };
 
     FC.signalingServer = function(){
-      return (window.location.protocol + '/' + window.location.host +'/');
+      return (window.location.protocol + '//' + window.location.host +'/');
     }
 
 })(jQuery, fluid_1_5);
