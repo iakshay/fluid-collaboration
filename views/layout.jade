@@ -7,16 +7,6 @@ html
 
   body
     .container
-      header.selectable
-        h1 Infusion Collaborate
-        section.top-panel
-          select(name='layout')
-            option(value='0,1,0') Video
-            option(value='0.5,0.5,0') Chat & Video
-            option(value='0.5,0,0.5') Chat & Notes
-            option(value='0.33,0.34,0.33') All
-          span Room Foo
-          a(class='settings', href='#settings') Settings
       block content
     script(src='/js/vendor/InfusionAll.js')
     script(src='/js/vendor/jquery.ui.resizable.js')

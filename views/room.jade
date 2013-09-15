@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  header.selectable
+    h1 Infusion Collaborate /
+      span #{room}
+    section.top-panel
+      select(name='layout')
+        option(value='0,1,0') Video
+        option(value='0.5,0.5,0') Chat & Video
+        option(value='0.5,0,0.5') Chat & Notes
+        option(value='0.33,0.34,0.33') All
+      a(class='settings', href='#settings') Settings
+  section(class='settings-panel')
+  section(class='module module-chat resizable selectable')
+    .title-bar
+      h3 Chat
+    ul.list-view
+      - for(var i = 0;i<20;i++)
+        li Lorem Ipsum
+    .chat-form
+        form#chat_form
+          input(autocomplete='off',type='text', id='chat_msg', name='chat_msg', placeholder='...')
+  section(class='module module-video resizable selectable')
+    .title-bar
+      h3 Video Conferencing
+    .module-inner
+        section(class='video-focus')
+          h2.flc-webrtc-status Create Room
+          .flc-webrtc-room
+            form
+              input(type='text', class='flc-webrtc-room-name', placeholder='Enter Room Name')
+              input(type='submit', class='flc-webrtc-room-submit', placeholder='Join')
+        section(class='video-tiles flc-webrtc-tiles-container') 
+          .title-bar
+            h3 Collaborators
+  section(class='module module-notes resizable selectable')  
+    .title-bar
+      h3 Notes
+    .module-inner
+        p.
+          Content here
+block script
+    script.
+        FC.room = '#{room}';
+        FC.env = '#{env}';
+        FC.init();

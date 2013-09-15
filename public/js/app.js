@@ -32,11 +32,10 @@ var fluid_1_5 = fluid_1_5 || {};
         $('.settings-panel').slideToggle();
         return false;
       });
-      console.log(fluid);
 
       fluid.webrtc('.module-video', {
         signalingServer: FC.signalingServer(),
-        room: 'foo',
+        room: FC.room,
         listeners: {
             onConnect: function(room) {
                 console.log('Connected to ', room);
