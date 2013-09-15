@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , config = require('./config/config')
+  , config = require('./config')
   , http = require('http')
   , path = require('path');
 
@@ -29,7 +29,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-//app.get('/users', user.list);
+app.get('/:room', routes.room);
 
 
 var io = require('socket.io').listen(app.listen(config.port));
