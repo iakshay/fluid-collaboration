@@ -16,6 +16,7 @@ body{
 }
 
 a{
+	color: rgb(74, 74, 207);
 	text-decoration: none;
 }
 
@@ -30,9 +31,9 @@ h3{
 	margin:10px;
 }
 header{
-	background:#222;
+	background:#eee;
 	height:50px;
-	line-height:50px	;
+	line-height:50px;
 	padding-left:20px;
 }
 
@@ -44,13 +45,32 @@ header h1{
 
 header h1 span{
 	padding-left:5px;
-	color: rgb(200, 216, 16);
+	color: rgb(174, 200, 55);
+}
+
+header .settings{
+	font-size: 1.8em;
+	font-weight: 300;
+	padding:5px 10px 5px 15px;
+}
+header select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: 10px;
+	background: rgb(248, 248, 248);
+	color: rgb(136, 136, 136);
+	border: 0;
+	outline: 0;
+	box-shadow: 1px 3px 0px rgba(51, 51, 51, 0.1);
 }
 
 .join-room{
 	margin:60px auto 0;
 	max-width:600px;
 	width:100%;
+	opacity:0;
+	transition: 0.8s;
 }
 
 .join-room input{
@@ -83,6 +103,13 @@ header h1 span{
 	margin-top:40px;
 }*/
 
+.button{
+	border: 0;
+	height:40px !important;
+	background: rgb(74, 74, 207);
+	color: rgb(255, 255, 255);
+	line-height: 1.5;
+}
 .container{
 	height: 100%;
 	position:relative;
@@ -211,23 +238,15 @@ header h1 span{
 	padding:5px;
 }
 
-.ui-resizable-e { 
-    cursor: e-resize; 
-    width: 16px; 
-    right: -5px; 
-    top: 0; 
-    bottom: 0; 
-    background-color: gray;
-}
 
 .top-panel{
 	float:right;
 	height:50px;
 	line-height: 50px;
-	background:rgba(255,255,255 0.3);
 }
 
 .settings-panel{
 	display:none;
 	height:200px;
+	background:rgba(51, 51, 51, 0.1);
 }

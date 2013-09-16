@@ -11,4 +11,24 @@ block content
       .room-details
         h3 Room 
         input(type='text', id='room', name='room', placeholder='Room Name', required)
-      input(type='submit', id='submit', name='submit')
+      input(type='submit', id='submit', name='submit', class='button')
+block script
+    script.
+        /* Restore previously saved values */
+        $(function(){
+          var roomname = window.location.hash.substring(1) || FC.settings.room;
+          $('.join-room #username').val(FC.settings.name);
+          $('.join-room #email').val(FC.settings.email);
+          $('.join-room #room').val(roomname);
+
+          $('.join-room').css('opacity', 1);
+          $('.join-room form').on('submit', function(){
+            var name = $(this).find('#username').val();
+            var email = $(this).find('#email').val();
+            var room = $(this).find('#room').val();
+
+            FC.saveDetails(name, email, room);
+            window.open('/' + room, "_self");
+            return false;
+          });
+        });
