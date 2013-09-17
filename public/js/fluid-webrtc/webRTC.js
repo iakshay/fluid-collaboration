@@ -166,7 +166,7 @@ var fluid_1_5 = fluid_1_5 || {};
         room = that.options.room;
 
         if (room) {
-            that.locate('roomName').hide();
+            that.locate('room').hide();
             $status.html(that.options.strings.joiningRoom + room);
         }
         

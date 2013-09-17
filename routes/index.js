@@ -5,10 +5,10 @@ var config = require('../config');
  */
 
 exports.index = function(req, res){
-	res.render('index', { title: 'Express', env: config.env});
+	res.render('index', { title: 'Fluid Collaboration', env: config.env});
 };
 
 exports.room = function(req, res){
   var room = req.params.room;
-  res.render('room', { title: 'Express', env: config.env, room : room });
+  res.render('room', { title: 'Fluid Collaboration', env: config.env, room : room });
 };

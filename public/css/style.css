@@ -99,10 +99,6 @@ header select{
 	box-sizing:border-box;
 }
 
-/*.room-details input{
-	margin-top:40px;
-}*/
-
 .button{
 	border: 0;
 	height:40px !important;
@@ -137,7 +133,7 @@ header select{
 }
 
 .module .title-bar{
-	background:rgb(0, 118, 176);
+	background:rgb(52, 52, 128);
 	padding:5px 10px;
 	color:#fff;
 	height:25px;
@@ -166,26 +162,41 @@ header select{
 
 .video-focus{
 	position: absolute;
-	background:rgba(223, 30, 30, 0.29);
+	/*background:rgba(223, 30, 30, 0.29);*/
 	left:0;
 	right:0;
 	top:35px;
 	bottom:50%;
 }
 
+.video-focus .focus-container{
+	height:100%;
+	text-align:center;
+	padding:20px;
+	box-sizing:border-box;	
+}
+
+.focus-container video{
+	height:100%;
+}
 .video-tiles{
 	position: absolute;
-	background:rgba(0, 128, 0, 0.26);
+	/*background:rgba(0, 128, 0, 0.26);*/
+	border-top:2px solid #CCC;
 	left:0;
 	right:0;
 	top:50%;
 	bottom:0;
 }
 
+.flc-webrtc-tiles-container {
+	overflow-x:hidden;
+	overflow-y:auto;
+}
 .list-view{
 	background:rgb(245, 245, 246);
 	position: absolute;
-	top:0;
+	top:35px;
 	bottom:50px;
 	font-size: 1.4em;
 	overflow-y:scroll;
@@ -198,6 +209,7 @@ header select{
 .list-view li:nth-child(even) {
 	background: rgb(255, 255, 255);
 }
+
 ::-webkit-scrollbar {
   -webkit-appearance:none;
   width:12px;
@@ -221,6 +233,7 @@ header select{
 ::-webkit-scrollbar-corner {
   background-color:#e6e6e6;
 }
+
 .chat-form{
 	padding:12px;
 	position: absolute;
@@ -249,4 +262,8 @@ header select{
 	display:none;
 	height:200px;
 	background:rgba(51, 51, 51, 0.1);
+}
+
+.flc-webrtc-room{
+	display:none;
 }

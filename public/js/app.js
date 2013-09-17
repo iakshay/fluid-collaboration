@@ -10,28 +10,7 @@ var fluid_1_5 = fluid_1_5 || {};
         FC.settings = {};
     }
     
-    $(".resizable").resizable({
-      autoHide: true,
-      handles: 'e',
-      resize: function(e, ui) 
-      {
-          var parent = ui.element.parent();
-          var remainingSpace = parent.width() - ui.element.outerWidth(),
-              divTwo = ui.element.next(),
-              divTwoWidth = (remainingSpace - (divTwo.outerWidth() - divTwo.width()))/parent.width()*100+"%";
-              divTwo.width(divTwoWidth);
-      },
-      stop: function(e, ui) 
-      {
-          var parent = ui.element.parent();
-          ui.element.css(
-          {
-              width: ui.element.width()/parent.width()*100+"%",
-          });
-      }
-    });
-    
-    $('select').change(function(){
+$('select').change(function(){
       var optionSelected = $("option:selected", this).val();
       FC.changeLayout(optionSelected);
     });
@@ -56,7 +35,7 @@ var fluid_1_5 = fluid_1_5 || {};
         room: FC.room,
         listeners: {
             onConnect: function(room) {
-                console.log('Connected to ', room);
+                $('.video-focus .focus-container').empty().append($('.video-tiles video').first().clone());
             },
             onVideoAdded: function(id) {
                 console.log('Video Added ID - ', id);
@@ -65,7 +44,7 @@ var fluid_1_5 = fluid_1_5 || {};
                 console.log('Video Removed ID - ', id);
             },
             onVideoClick: function(el){
-                console.log('Video - ', el);
+                $('.video-focus .focus-container').empty().append($(el).clone());
             }
         },
         resources: {
