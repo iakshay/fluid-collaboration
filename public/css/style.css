@@ -70,7 +70,7 @@ header select{
 	max-width:600px;
 	width:100%;
 	opacity:0;
-	transition: 0.8s;
+	transition: opacity 0.8s;
 }
 
 .join-room input{
@@ -136,6 +136,7 @@ header select{
 	height: -o-calc(100% - 50px);
 	height: calc(100% - 50px);
 	float:left;
+	transition:0.8s;
 }
 
 .module .title-bar{
@@ -166,6 +167,14 @@ header select{
 	width:25%;
 }
 
+.module-notes textarea{
+	position: absolute;
+	top:35px;
+	bottom:0;
+	left:0;
+	right:0;
+	font-size:2.2em;
+}
 .video-focus{
 	position: absolute;
 	/*background:rgba(223, 30, 30, 0.29);*/

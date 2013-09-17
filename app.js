@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , config = require('./config')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , sharejs = require('share').server;
 
 var app = express();
 
@@ -31,6 +32,14 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/:room', routes.room);
 
+
+/*Sharejs for Notes Collaboration */
+
+// See docs for options. {type: 'redis'} to enable persistance.
+var options = {db: {type: 'none'}}; 
+
+// Attach the sharejs REST and Socket.io interfaces to the server
+sharejs.attach(app, options);
 
 var io = require('socket.io').listen(app.listen(config.port));
 
