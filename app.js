@@ -43,6 +43,13 @@ sharejs.attach(app, options);
 
 var io = require('socket.io').listen(app.listen(config.port));
 
+if(config.env === 'production'){
+    io.configure(function () { 
+      io.set("transports", ["xhr-polling"]); 
+      io.set("polling duration", 10); 
+    });
+}
+
 io.sockets.on('connection', function (client) {
     // pass a message
     client.on('message', function (details) {
