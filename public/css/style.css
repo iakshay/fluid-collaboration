@@ -87,6 +87,8 @@ header select{
 	display:inline-block;
 	width:300px;
 	min-height:160px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	border-right:1px solid #CCC;
 }
@@ -96,6 +98,8 @@ header select{
 	vertical-align: top;
 	width:300px;
 	min-height:160px;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 }
 
@@ -123,6 +127,8 @@ header select{
 	color:#222;
 	top:0;
 	border:1px solid #CCC;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	height:100%;
 	height: -moz-calc(100% - 50px);
@@ -173,7 +179,9 @@ header select{
 	height:100%;
 	text-align:center;
 	padding:20px;
-	box-sizing:border-box;	
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;	
+	box-sizing:border-box;
 }
 
 .focus-container video{
@@ -243,6 +251,8 @@ header select{
 .chat-form{
 	padding:12px;
 	position: absolute;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	bottom:0;
 	left:0;
@@ -252,6 +262,8 @@ header select{
 }
 
 .chat-form input{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
 	box-sizing:border-box;
 	width:100%;	
 	padding:5px;

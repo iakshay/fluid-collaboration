@@ -91,6 +91,11 @@ $('select').on('change', function(){
       this.updateDetails();
     };
 
+    FC.changeRoom = function(room){
+      FC.settings['room'] = room;
+      this.updateDetails();
+    };
+
     FC.updateDetails = function(){
       localStorage['userdata'] = JSON.stringify(this.settings);
     };
@@ -110,6 +115,8 @@ $('select').on('change', function(){
       }else{
         $('.list-view').append('<li class="info">' + message + '</li>');
       }
+
+      $('.list-view').animate({ scrollTop: $('.list-view').height() });
     });
 
     // socket.on('updateusers', function(data) {
