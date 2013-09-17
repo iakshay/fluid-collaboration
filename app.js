@@ -86,4 +86,46 @@ io.sockets.on('connection', function (client) {
             if (cb) cb(null, name);
         }
     });
+
+    /* Multi - Room Chat */
+    var users = [];
+
+    function removeUser(name){
+        users.forEach(function(userInfo, i){
+            if(userInfo.name === name){
+                users.splice(i, 1);
+                return;
+            }
+        });
+    }
+    // when the client emits 'sendchat', this listens and executes
+    client.on('sendchat', function (data) {
+        // we tell the client to execute 'updatechat' with 2 parameters
+        io.sockets.in(client.info.room).emit('updatechat', client.info, data);
+    });
+
+    // when the client emits 'adduser', this listens and executes
+    client.on('adduser', function(info){
+        // we store the username in the client session for this client
+        client.info = info;
+        // add the client's username to the global list
+        users.push(info);
+        client.join(info.room);
+        // echo to client they've connected
+        client.emit('updatechat', 'SERVER', 'You have connected');
+        // echo globally (all clients) that a person has connected
+        client.broadcast.to(info.room).emit('updatechat', 'SERVER', info.name + ' has connected');
+        // update the list of users in chat, client-side
+        io.sockets.in(client.info.room).emit('updateusers', users);
+    });
+
+    // when the user disconnects.. perform this
+    client.on('disconnect', function(){
+        // remove the username from global usernames list
+        removeUser(client.info.name);
+        // update list of users in chat, client-side
+        io.sockets.in(client.info.room).emit('updateusers', users);
+        // echo globally that this client has left
+        client.broadcast.to(client.info.room).emit('updatechat', 'SERVER', client.info.name + ' has disconnected');
+    });
 });

@@ -10,12 +10,12 @@ var fluid_1_5 = fluid_1_5 || {};
         FC.settings = {};
     }
     
-$('select').change(function(){
+$('select').on('change', function(){
       var optionSelected = $("option:selected", this).val();
       FC.changeLayout(optionSelected);
     });
 
-    $('.settings').click(function(){
+    $('.settings').on('click', function(){
       $('.settings-panel').slideToggle();
       return false;
     });
@@ -94,4 +94,41 @@ $('select').change(function(){
     FC.updateDetails = function(){
       localStorage['userdata'] = JSON.stringify(this.settings);
     };
+
+    var socket = io.connect(FC.signalingServer());
+
+    // on connection to server, ask for user's name with an anonymous callback
+    socket.on('connect', function(){
+      // call the server-side function 'adduser' and send one parameter (value of prompt)
+      socket.emit('adduser', FC.settings);
+    });
+
+    // listener, whenever the server emits 'updatechat', this updates the chat body
+    socket.on('updatechat', function (user, message) {
+      if(typeof user === 'object'){
+        $('.list-view').append('<li><b>'+ user.name + ':</b> ' + message + '</li>');
+      }else{
+        $('.list-view').append('<li class="info">' + message + '</li>');
+      }
+    });
+
+    // socket.on('updateusers', function(data) {
+    //   $('#users').empty();
+    //   $.each(data, function(key, value) {
+    //     $('#users').append('<div>' + key + '</div>');
+    //   });
+    // });
+
+   // when the client hits ENTER on their keyboard
+    $('#chat_msg').keypress(function(e) {
+      if(e.which == 13) {
+        var message = $(this).val();
+        $(this).val('');
+        if(message.length){
+          socket.emit('sendchat', message);
+        }
+        return false;
+      }
+    });
+
 })(jQuery, fluid_1_5);

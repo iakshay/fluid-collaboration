@@ -199,15 +199,21 @@ header select{
 	top:35px;
 	bottom:50px;
 	font-size: 1.4em;
-	overflow-y:scroll;
+	overflow-y:auto;
 	width:100%;
 }
 .list-view li{
 	padding:8px 5px;
 }
 
+
 .list-view li:nth-child(even) {
 	background: rgb(255, 255, 255);
+}
+
+.list-view .info{
+	background: rgb(253, 248, 189) !important;
+	font-style: italic;
 }
 
 ::-webkit-scrollbar {
